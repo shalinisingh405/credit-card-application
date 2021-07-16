@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "84d52a7a-987a-43f2-a0fa-32cea0b2d8d0",
+		"name": "CreditCardApplication-postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All cards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/creditCards",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"creditCards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid Card details",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"cardholderName\": null, \"creditCardLimit\": 0, \"creditCardNumber\": \"213\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/creditCards",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"creditCards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valid Card Details - addCreditCard Successfully",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"cardHolderName\": \"shalini\", \"creditCardLimit\": 1000, \"creditCardNumber\": \"370294919445040\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/creditCards",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"creditCards"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
